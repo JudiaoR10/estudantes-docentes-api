@@ -1,0 +1,19 @@
+{
+  "name": "smart-campus",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build:types": "npm run build -w @smart-campus/shared-types",
+    "build:validation": "npm run build -w @smart-campus/validation",
+    "build:packages": "npm run build:types && npm run build:validation && npm run build -w @smart-campus/api-client",
+    "dev:api": "npm run dev -w @smart-campus/api",
+    "dev:web": "npm run dev -w @smart-campus/web",
+    "db:generate": "npm run db:generate -w @smart-campus/api",
+    "db:migrate:dev": "npm run db:migrate:dev -w @smart-campus/api",
+    "db:seed": "npm run db:seed -w @smart-campus/api",
+    "test": "npm run test -w @smart-campus/api"
+  }
+}
